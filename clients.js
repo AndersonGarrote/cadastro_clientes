@@ -1,7 +1,7 @@
 var clients = [];
 
-function submitButtonPressed() {
-    
+function submitForm() {
+
     var newClient = {
         name : document.getElementById("inputName").value,
         email : document.getElementById("inputEmail").value,

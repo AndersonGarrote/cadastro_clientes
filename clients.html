@@ -19,12 +19,12 @@
                 <div class="col">
                     <h2>Formulário de Cadastro</h2>
 
-                    <form>
+                    <form action="javascript:submitForm();">
                         <div class="row">
                             <div class="col">
                                 <div class="form-group">
                                     <label for="inputName">Nome:</label>
-                                    <input type="text" class="form-control" id="inputName" re>
+                                    <input type="text" class="form-control" id="inputName" required>
                                 </div>
                             </div>
                         </div>
@@ -38,7 +38,7 @@
                             <div class="col">
                                 <div class="form-group">
                                     <label for="inputPhone">Telefone:</label>
-                                    <input type="tel" class="form-control" id="inputPhone">
+                                    <input type="text" class="form-control" id="inputPhone">
                                 </div>
                             </div>
                             <div class="col">
@@ -83,13 +83,13 @@
                             </div>
                         </div>
 
-                        <button class="btn btn-primary" onclick="submitButtonPressed()" type="button">Cadastrar</button>
+                        <button class="btn btn-primary">Cadastrar</button>
                     </form>
                 </div>
 
                 <div class="col">
 
-                    <h2>Lista de clientes cadastrados</h2>
+                    <h2>Lista de Clientes Cadastrados</h2>
                     <div id="clientsList">
                         <div class="card">
                             <div class="card-body" id="cardID">
