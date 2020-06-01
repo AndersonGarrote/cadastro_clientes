@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+
+        <!-- CSS only -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+        <script src="clientListController.js"></script>
+        
+    </head>
+
+    <body>
+        <div class="container row">
+            <!--<h1>Cadastro de Clientes</h1> -->
+
+            <div class="col">
+                <h2>Formulário de Cadastro</h2>
+
+                <div>
+                    <div class="row">
+                        <div class="col">
+                            <div class="form-group">
+                                <label for="inputName">Nome:</label>
+                                <input type="text" class="form-control" id="inputName">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <div class="form-group">
+                                <label for="inputEmail">E-mail:</label>
+                                <input type="email" class="form-control" id="inputEmail">
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-group">
+                                <label for="inputPhone">Telefone:</label>
+                                <input type="text" class="form-control" id="inputPhone">
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-group">
+                                <label for="inputCEP">CEP:</label>
+                                <input type="text" class="form-control" id="inputCEP">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <div class="form-group">
+                                <label for="inputStreet">Logradouro:</label>
+                                <input type="text" class="form-control" id="inputStreet">
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-group">
+                                <label for="inputNumber">Número:</label>
+                                <input type="number" class="form-control" id="inputNumber">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <div class="form-group">
+                                <label for="inputDistrict">Bairro:</label>
+                                <input type="text" class="form-control" id="inputDistrict">
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-group">
+                                <label for="inputCity">Cidade:</label>
+                                <input type="text" class="form-control" id="inputCity">
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-group">
+                                <label for="inputState">Estado:</label>
+                                <input type="text" class="form-control" id="inputState">
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <button class="btn btn-primary" onclick="updateList()">Cadastrar</button>
+                </div>
+            </div>
+
+            <div class="col">
+
+                <h2>Lista de clientes cadastrados</h2>
+                
+                <div class="card" id="clientsList">
+                    <div class="card-body">
+                        <h5 class="card-title" id="carlos">Carlos Almeida</h5>
+                      
+                        <div class="row">  
+                            <div class="col">E-mail: </div>
+                            <div class="col">Telefone: </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">CEP: </div>
+                            <div class="col">Logradouro: </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">Bairro: </div>
+                            <div class="col">Cidade: </div>
+                            <div class="col">Estado: </div>
+                        </div>
+
+                        <button type="button" class="btn btn-danger" onclick="submitClientForm()">Excluir cliente</button>
+                    </div>
+                </div>
+
+            </div>
+
+            <p id="list"></p>
+        </div>
+    </body>
+</html>
+
