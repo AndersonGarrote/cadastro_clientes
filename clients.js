@@ -18,24 +18,13 @@ function submitForm() {
     
     updateClientList();
     
-    document.getElementById("inputName").value = "";
-    document.getElementById("inputEmail").value = "";;
-    document.getElementById("inputPhone").value = "";
-    document.getElementById("inputCEP").value = "";
-    document.getElementById("inputStreet").value = "";
-    document.getElementById("inputNumber").value = "";
-    document.getElementById("inputDistrict").value = "";
-    document.getElementById("inputCity").value = "";
-    document.getElementById("inputState").value = "";
+    clearFormInputs()
 }
+
 
 function removeClientButtonPressed(id) {
-    removeClient(id);
-    updateClientList();
-}
-
-function removeClient(id) {
     clients.splice(id,1);
+    updateClientList();
 }
 
 
@@ -53,23 +42,24 @@ function updateClientList() {
     }
 }
 
+
 function createCard(value, idx){
+    var newCard, cardBody, cardTitle, cardButton;
+    
     //Create Card
-    var newCard = document.createElement("div");
+    newCard = document.createElement("div");
     newCard.className = "card";
     
-    var cardBody = document.createElement("div");
+    cardBody = document.createElement("div");
     cardBody.className = "card-body";
     
-    //Client Name
-    var cardTitle = document.createElement("h5");
+    //Add Client Name
+    cardTitle = document.createElement("h5");
     cardTitle.className = "card-title";
-    
     cardTitle.innerText = value.name;
-    
     cardBody.appendChild(cardTitle);
     
-    //Client Info
+    //Add Client Info
     addCardInfo("E-mail: " + value.email, cardBody);
     addCardInfo("Telefone: " + value.phone, cardBody);
     addCardInfo("CEP: " + value.cep, cardBody);
@@ -78,29 +68,43 @@ function createCard(value, idx){
     addCardInfo("Cidade: " + value.city + ", " + "Estado: " + value.state, cardBody);
 
     //Add Button
-    var cardButton = document.createElement("button");
+    cardButton = document.createElement("button");
     cardButton.className = "btn btn-danger";
     cardButton.onclick = function() {removeClientButtonPressed(idx)};
     cardButton.textContent = "Remover Cliente"; 
     cardBody.appendChild(cardButton);
-
-    //Add Card to ClientsList
+    
+    //Append Card to ClientsList
     newCard.appendChild(cardBody);
     document.getElementById("clientsList").appendChild(newCard);
 }
+
 
 function showEmptyListMessage() {
     var infoText = document.createElement("div");
     
     infoText.className = "alert alert-info"; 
-    infoText.textContent += "Não há clientes cadastrados! Adicione clientes usando o formulário ao lado.";
-    
+    infoText.textContent += "Não há clientes cadastrados! Adicione clientes usando o formulário ao lado.";  
     document.getElementById("clientsList").appendChild(infoText);
 }
 
+
 function addCardInfo(str, cardBody) {
     var cardText = document.createElement("p");
+
     cardText.className = "text";
     cardText.textContent += str;
     cardBody.appendChild(cardText);
+}
+
+function clearFormInputs(){
+    document.getElementById("inputName").value = "";
+    document.getElementById("inputEmail").value = "";;
+    document.getElementById("inputPhone").value = "";
+    document.getElementById("inputCEP").value = "";
+    document.getElementById("inputStreet").value = "";
+    document.getElementById("inputNumber").value = "";
+    document.getElementById("inputDistrict").value = "";
+    document.getElementById("inputCity").value = "";
+    document.getElementById("inputState").value = "";
 }
