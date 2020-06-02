@@ -43,9 +43,13 @@ function removeClient(id) {
 function updateClientList() {
     document.getElementById("clientsList").innerHTML = "";
     
-    for (let idx = 0; idx < clients.length; idx++) {
-        const element = clients[idx];
-        createCard(element,idx);
+    if (clients.length > 0) {
+        for (let idx = 0; idx < clients.length; idx++) {
+            const element = clients[idx];
+            createCard(element,idx);
+        }
+    } else {
+        showEmptyListMessage();
     }
 }
 
@@ -84,4 +88,13 @@ function createCard(value, idx){
     cardBody.appendChild(cardButton);
     newCard.appendChild(cardBody);
     document.getElementById("clientsList").appendChild(newCard);
-} 
+}
+
+function showEmptyListMessage() {
+    var infoText = document.createElement("div");
+    infoText.className = "alert alert-info"; 
+
+    infoText.textContent += "Não há clientes cadastrados! Adicione clientes usando o formulário ao lado.";
+    
+    document.getElementById("clientsList").appendChild(infoText);
+}

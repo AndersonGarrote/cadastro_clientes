@@ -12,7 +12,7 @@
 
     <body>
         <div class="container">
-            <h1>Cadastro de Clientes</h1>
+            <h1 class="py-1">Cadastro de Clientes</h1>
 
             <div class="row">
 
@@ -38,13 +38,13 @@
                             <div class="col">
                                 <div class="form-group">
                                     <label for="inputPhone">Telefone:</label>
-                                    <input type="text" class="form-control" id="inputPhone">
+                                    <input type="tel" class="form-control" id="inputPhone" pattern="\(\d{2}\)\d{4,5}-\d{4}" placeholder="(00)00000-0000">
                                 </div>
                             </div>
                             <div class="col">
                                 <div class="form-group">
                                     <label for="inputCEP">CEP:</label>
-                                    <input type="text" class="form-control" id="inputCEP">
+                                    <input type="text" class="form-control" id="inputCEP" pattern="\d{5}-\d{3}" placeholder="00000-000">
                                 </div>
                             </div>
                         </div>
