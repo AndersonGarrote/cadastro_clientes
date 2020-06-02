@@ -23,6 +23,7 @@
                                 <div class="form-group">
                                     <label for="inputName">Nome:</label>
                                     <input type="text" class="form-control" id="inputName" required>
+                                    <small id="nameHelp" class="form-text text-muted">Obrigatório preenchimento do nome.</small>
                                 </div>
                             </div>
                         </div>
@@ -30,19 +31,21 @@
                             <div class="col">
                                 <div class="form-group">
                                     <label for="inputEmail">E-mail:</label>
-                                    <input type="email" class="form-control" id="inputEmail">
+                                    <input stype="email" class="form-control" id="inputEmail">
                                 </div>
                             </div>
                             <div class="col">
                                 <div class="form-group">
                                     <label for="inputPhone">Telefone:</label>
                                     <input type="tel" class="form-control" id="inputPhone" pattern="\(\d{2}\)\d{4,5}-\d{4}" placeholder="(00)00000-0000">
+                                    <small id="CEPHelp" class="form-text text-muted">Formato: (00)00000-0000</small>
                                 </div>
                             </div>
-                            <div class="col">
+                            <div class="col-4">
                                 <div class="form-group">
                                     <label for="inputCEP">CEP:</label>
                                     <input type="text" class="form-control" id="inputCEP" pattern="\d{5}-\d{3}" placeholder="00000-000">
+                                    <small id="CEPHelp" class="form-text text-muted">Formato: 00000-000</small>
                                 </div>
                             </div>
                         </div>
@@ -53,7 +56,7 @@
                                     <input type="text" class="form-control" id="inputStreet">
                                 </div>
                             </div>
-                            <div class="col">
+                            <div class="col-3">
                                 <div class="form-group">
                                     <label for="inputNumber">Número:</label>
                                     <input type="number" class="form-control" id="inputNumber">
